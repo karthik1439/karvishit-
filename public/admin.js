@@ -97,13 +97,6 @@ function renderApplications(applications) {
       linkedIn.textContent = 'LinkedIn profile';
       details.append(linkedIn);
     }
-    if (application.coverLetter) {
-      const coverLetter = document.createElement('p');
-      coverLetter.className = 'application-detail';
-      coverLetter.textContent = application.coverLetter;
-      details.append(coverLetter);
-    }
-
     const actions = document.createElement('div');
     actions.className = 'application-actions';
     const resumeLink = document.createElement('a');
