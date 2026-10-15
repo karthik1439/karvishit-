@@ -21,7 +21,9 @@
 
     <section class="admin-section" aria-labelledby="new-opening-title">
       <h2 id="new-opening-title">Post a job opening</h2>
+      <p class="section-copy">Use the example button to fill a clearly labeled draft. It is not published unless you choose to publish it.</p>
       <form class="admin-form" id="job-form">
+        <button class="remove-job-button sample-fill-button" id="sample-job-button" type="button">Fill example draft</button>
         <label for="job-title">Job title</label>
         <input id="job-title" name="title" type="text" minlength="3" maxlength="100" required>
 
@@ -58,6 +60,14 @@
       <h2 id="posted-openings-title">Posted openings</h2>
       <div class="admin-job-list" id="admin-job-list" aria-live="polite">
         <p class="section-copy">Loading openings...</p>
+      </div>
+    </section>
+
+    <section class="admin-section" id="applications" aria-labelledby="applications-title">
+      <h2 id="applications-title">Candidate applications</h2>
+      <p class="section-copy">Private applicant details and resume downloads are visible only to authenticated admins. Showing the newest 100 applications.</p>
+      <div class="admin-application-list" id="admin-application-list" aria-live="polite">
+        <p class="section-copy">Loading applications...</p>
       </div>
     </section>
   </main>
