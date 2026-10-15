@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f2ec">
+  <title>Careers Admin | Karvishit Services PRV LTD</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header admin-header">
+    <a class="brand-link" href="/" aria-label="Karvishit Services PRV LTD home">
+      <img class="brand-logo" src="/karvishit-logo.svg" alt="Karvishit Services PRV LTD">
+    </a>
+    <a class="nav-contact" href="/#careers">View careers page <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="admin-main">
+    <p class="section-label">KARVISHIT / CAREERS</p>
+    <h1 class="admin-title">Job openings</h1>
+    <p class="section-copy">Create and manage the roles displayed on the public Careers page.</p>
+
+    <section class="admin-section" aria-labelledby="new-opening-title">
+      <h2 id="new-opening-title">Post a job opening</h2>
+      <form class="admin-form" id="job-form">
+        <label for="job-title">Job title</label>
+        <input id="job-title" name="title" type="text" minlength="3" maxlength="100" required>
+
+        <div class="admin-form-row">
+          <div>
+            <label for="job-location">Location</label>
+            <input id="job-location" name="location" type="text" maxlength="100" placeholder="City, hybrid, or remote" required>
+          </div>
+          <div>
+            <label for="job-type">Employment type</label>
+            <select id="job-type" name="employmentType" required>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="contract">Contract</option>
+              <option value="temporary">Temporary</option>
+              <option value="internship">Internship</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="job-summary">Role summary</label>
+        <textarea id="job-summary" name="summary" rows="4" minlength="20" maxlength="500" required></textarea>
+
+        <label for="job-requirements">Requirements <span class="field-hint">One requirement per line, up to 12</span></label>
+        <textarea id="job-requirements" name="requirements" rows="6" required placeholder="Relevant experience in your field&#10;Clear communication and teamwork"></textarea>
+
+        <label class="checkbox-label"><input name="active" type="checkbox" checked> Publish this opening on the Careers page</label>
+        <button class="submit-button" type="submit">Publish opening <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="admin-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-section" aria-labelledby="posted-openings-title">
+      <h2 id="posted-openings-title">Posted openings</h2>
+      <div class="admin-job-list" id="admin-job-list" aria-live="polite">
+        <p class="section-copy">Loading openings...</p>
+      </div>
+    </section>
+  </main>
+  <script src="/admin.js" defer></script>
+</body>
+</html>

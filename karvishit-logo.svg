@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 100" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Karvishit Services PRV LTD</title>
+  <rect x="8" y="10" width="80" height="80" rx="18" fill="#20241f"/>
+  <path d="M34 31v38m28-38L37 50l27 19" fill="none" stroke="#b9d884" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  <path d="m61 31-8 8" fill="none" stroke="#ef6847" stroke-linecap="round" stroke-width="8"/>
+  <text x="108" y="52" fill="#20241f" font-family="Manrope, Trebuchet MS, sans-serif" font-size="30" font-weight="800" letter-spacing=".4">Karvishit</text>
+  <text x="110" y="75" fill="#70756c" font-family="DM Mono, Courier New, monospace" font-size="12" letter-spacing="2.1">SERVICES PRV LTD</text>
+</svg>
