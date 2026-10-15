@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f2ec">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Apply to Karvishit Services PRV LTD</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header admin-header">
+    <a class="brand-link" href="/" aria-label="Karvishit Services PRV LTD home">
+      <img class="brand-logo" src="/karvishit-logo.svg" alt="Karvishit Services PRV LTD">
+    </a>
+    <a class="nav-contact" href="/#careers">View careers <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="admin-main application-page">
+    <p class="section-label">KARVISHIT / CAREERS</p>
+    <h1 class="admin-title">Your next step starts here.</h1>
+    <p class="section-copy">Share your details and resume with our hiring team. Required fields are marked in your browser.</p>
+
+    <section class="application-card" aria-labelledby="application-form-title">
+      <h2 id="application-form-title">Candidate application</h2>
+      <p class="privacy-notice">Your application and resume are private and available only to the hiring team. Upload only your resume, not identity, financial, or other sensitive documents. We use these details to review your application.</p>
+      <p class="form-status" id="application-availability" role="status" aria-live="polite">Checking secure application storage...</p>
+      <form class="application-form" id="application-form" enctype="multipart/form-data">
+        <div class="honeypot-field" aria-hidden="true">
+          <label for="application-website">Leave this field empty</label>
+          <input id="application-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <label for="application-job">Position</label>
+        <select id="application-job" name="jobId">
+          <option value="">General application</option>
+        </select>
+        <label for="application-name">Full name</label>
+        <input id="application-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" required>
+        <label for="application-email">Email address</label>
+        <input id="application-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+        <label for="application-phone">Phone number <span class="field-hint">Optional</span></label>
+        <input id="application-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        <label for="application-location">Current location</label>
+        <input id="application-location" name="location" type="text" autocomplete="address-level2" maxlength="100" required>
+        <label for="application-linkedin">LinkedIn profile <span class="field-hint">Optional; use a linkedin.com profile URL</span></label>
+        <input id="application-linkedin" name="linkedIn" type="url" maxlength="300" placeholder="https://www.linkedin.com/in/your-profile">
+        <label for="application-resume">Resume <span class="field-hint">PDF, DOC, or DOCX; maximum 5 MB</span></label>
+        <input id="application-resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+        <label for="application-cover-letter">Short introduction <span class="field-hint">Optional</span></label>
+        <textarea id="application-cover-letter" name="coverLetter" rows="5" maxlength="2000"></textarea>
+        <label class="checkbox-label"><input name="consent" type="checkbox" required> I agree that the hiring team may use my details and resume to review this application.</label>
+        <button class="submit-button" type="submit">Submit application <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="application-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <script src="/apply.js" defer></script>
+</body>
+</html>

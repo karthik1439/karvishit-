@@ -81,13 +81,14 @@ h1 span { color: var(--orange); font-family: Georgia, 'Times New Roman', serif; 
 .job-opening > p:not(.job-meta), .job-opening li { color: var(--muted); font-size: 13px; line-height: 1.75; }
 .job-opening ul { padding-left: 18px; }
 .job-opening .text-link { margin-top: 6px; }
+.careers > .text-link { grid-column: 2; justify-self: start; }
 .contact-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 40px; }
 .contact-actions > .section-copy { margin-top: 0; }
 .contact-form { display: grid; grid-template-columns: 1fr; gap: 9px; margin-top: 22px; }
 .contact-form label { margin-top: 8px; font-size: 12px; font-weight: 700; }
-.contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); padding: 12px; font: inherit; font-size: 14px; }
+.contact-form input, .contact-form textarea, .application-form input:not([type="checkbox"]), .application-form textarea, .application-form select { width: 100%; border: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); padding: 12px; font: inherit; font-size: 14px; }
 .contact-form textarea { min-height: 110px; resize: vertical; }
-.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--orange); outline-offset: 2px; }
+.contact-form input:focus, .contact-form textarea:focus, .application-form input:focus, .application-form textarea:focus, .application-form select:focus { outline: 2px solid var(--orange); outline-offset: 2px; }
 .submit-button { justify-self: start; display: inline-flex; align-items: center; gap: 24px; margin-top: 8px; padding: 14px 18px; border: 0; background: var(--ink); color: var(--paper); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; transition: background .2s ease; }
 .submit-button:hover { background: var(--orange); }
 .submit-button:disabled { cursor: wait; opacity: .65; }
@@ -115,11 +116,32 @@ h1 span { color: var(--orange); font-family: Georgia, 'Times New Roman', serif; 
 .checkbox-label { display: flex; align-items: center; gap: 10px; }
 .checkbox-label input { width: 16px; height: 16px; accent-color: var(--orange); }
 .admin-job-list { display: grid; gap: 0; }
+.admin-application-list { display: grid; gap: 0; }
 .admin-job-item { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-top: 1px solid var(--line); }
+.admin-application-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
 .admin-job-item h3 { font-size: 16px; }
+.admin-application-item h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
 .admin-job-item .job-meta { margin: 0; }
+.admin-application-item .job-meta { margin-bottom: 8px; }
+.admin-application-item a:not(.remove-job-button) { display: inline-block; margin: 4px 14px 4px 0; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+.application-detail { max-width: 520px; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
+.application-actions { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-end; gap: 8px; }
 .remove-job-button { flex: 0 0 auto; border: 1px solid var(--line); padding: 10px 14px; background: transparent; color: var(--ink); font: inherit; font-size: 12px; cursor: pointer; }
 .remove-job-button:hover { border-color: var(--orange); color: var(--orange); }
+.sample-fill-button { justify-self: start; }
+.application-page { max-width: 760px; }
+.application-card { margin-top: 38px; padding-top: 28px; border-top: 1px solid var(--line); }
+.application-card h2 { margin: 0; font-size: 24px; font-weight: 600; }
+.privacy-notice { padding: 16px 18px; border-left: 3px solid var(--green); background: #e9eadf; color: var(--muted); font-size: 13px; line-height: 1.75; }
+.application-form { display: grid; gap: 10px; max-width: 620px; margin-top: 24px; }
+.application-form > label { margin-top: 8px; font-size: 12px; font-weight: 700; }
+.application-form input[type="file"] { padding: 9px; }
+.application-form textarea { min-height: 120px; resize: vertical; }
+.application-form .field-hint { display: inline-block; margin-left: 5px; }
+.application-form input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--orange); }
+.application-form .checkbox-label { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 12px; line-height: 1.65; }
+.application-form .checkbox-label input { flex: 0 0 auto; margin-top: 2px; }
+.honeypot-field { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .admin-header .nav-contact { font-size: 12px; }
 
 @media (max-width: 930px) {
@@ -152,12 +174,15 @@ h1 span { color: var(--orange); font-family: Georgia, 'Times New Roman', serif; 
   .framework-grid { grid-template-columns: 1fr; gap: 24px; }
   .framework-item { padding-top: 16px; }
   .contact-content { grid-template-columns: 1fr; gap: 24px; }
+  .careers > .text-link { grid-column: 1; }
   .contact-actions { width: 100%; }
   .contact-form { max-width: 100%; }
   .email-link { margin-top: 12px; }
   .copyright { font-size: 8px; }
   .admin-main { width: min(100% - 40px, 520px); padding: 48px 0 70px; }
   .admin-form-row { grid-template-columns: 1fr; gap: 10px; }
+  .admin-application-item { flex-direction: column; }
+  .application-actions { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

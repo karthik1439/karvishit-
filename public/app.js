@@ -71,8 +71,8 @@ function renderPublicJobs(jobs) {
     }
     const applyLink = document.createElement('a');
     applyLink.className = 'text-link';
-    applyLink.href = `mailto:HR@karvishit.com?subject=${encodeURIComponent(`Application: ${job.title}`)}`;
-    applyLink.textContent = 'Apply by email ↗';
+    applyLink.href = `/apply?job=${encodeURIComponent(job.id)}`;
+    applyLink.textContent = 'Apply for this role ↗';
     opening.append(heading, meta, summary, requirements, applyLink);
     publicJobList.append(opening);
   }
